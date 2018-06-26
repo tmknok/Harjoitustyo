@@ -1,26 +1,32 @@
+import java.util.Random;
+
 /**
  * Main class for testing all five algorithms. 
  *
  */
 public class Testing {
 
+	private static int[] quicktest, bubtest, countest, mergetest, heaptest;
+	
+	
 	/**
 	 * Main method for testing out the algorithm. Prints out the result after sort has finished.
 	 */
 	public static void main (String[] args) {
 		
 		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
-		int[] testarray = {6,17,44,66,2,1,90,400,5};
-		System.out.println("Printing out the test array:");
-		for (int element: testarray){
-			System.out.print(element);
-			System.out.print(" ");
-		}
-		System.out.println();
+		randomize(100);
+		
+//		System.out.println("Printing out the test array:");
+//		for (int element: qui){
+//			System.out.print(element);
+//			System.out.print(" ");
+//		}
+//		System.out.println();
 		
 		//Testing quicksort
 		System.out.println("Testing quicksort and printing out the sorted array:");
-		Quicksort.quickSort(testarray, 0, testarray.length - 1);
+		Quicksort.quickSort(quicktest, 0, quicktest.length - 1);
 		for(int element: testarray) {
 			System.out.print(element);
 			System.out.print(" ");
@@ -106,5 +112,31 @@ public class Testing {
 			System.out.print(" ");
 		}
 		System.out.println();
+	}
+	
+	/**
+	 * Method for creating a randomized int[] array. 
+	 * Int values will be randomly generated between values 0-99.
+	 * @param The size of the array.
+	 */
+	private static void randomize(int size) {
+		
+		Random r = new Random(); 
+		quicktest = new int[size]; 
+		bubtest = new int[size]; 
+		countest = new int[size];
+		mergetest = new int[size]; 
+		heaptest = new int[size];
+		
+		for (int i = 0; i < size; i++) {
+			quicktest[i] = r.nextInt(100); 
+			bubtest[i] = quicktest[i]; 
+			countest[i] = quicktest[i]; 
+			mergetest[i] = quicktest[i]; 
+			heaptest[i] = quicktest[i]; 
+			System.out.print(quicktest[i]);
+			System.out.print(","); 
+		}
+		System.out.print("\n");
 	}
 }
