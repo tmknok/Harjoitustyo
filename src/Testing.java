@@ -8,36 +8,26 @@ public class Testing {
 
 	private static int[] quicktest, bubtest, countest, mergetest, heaptest;
 	
-	
 	/**
 	 * Main method for testing out the algorithm. Prints out the result after sort has finished.
 	 */
 	public static void main (String[] args) {
 		
 		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
-		randomize(100);
-		
-//		System.out.println("Printing out the test array:");
-//		for (int element: qui){
-//			System.out.print(element);
-//			System.out.print(" ");
-//		}
-//		System.out.println();
+		randomize(10);
 		
 		Timer t = new Timer();
 		
-		
-		System.out.println("Testing quicksort and printing out the sorted array:");
-		Quicksort.quickSort(quicktest, 0, quicktest.length - 1);
-
+		System.out.println("Testing quicksort!");
 		//Start the timer
 		t.start();
 		//Testing quicksort
-		Quicksort.quickSort(testarray, 0, testarray.length - 1);
+		System.out.println("Start testing...once finished, print out sorted array:");
+		Quicksort.quickSort(quicktest, 0, quicktest.length - 1);
 		//End the timer
 		t.stop();
 
-		for(int element: testarray) {
+		for(int element: quicktest) {
 			System.out.print(element);
 			System.out.print(" ");
 		}
@@ -45,8 +35,6 @@ public class Testing {
 		
 		//-----------------------------------------------------------------------//
 		
-		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
-		int[] bubtest = {6,17,44,66,2,1,90,400,5};
 		System.out.println("Printing out the test array:");
 		for (int element: bubtest){
 			System.out.print(element);
@@ -54,11 +42,14 @@ public class Testing {
 		}
 		System.out.println();
 		
+		System.out.println("Testing bubble sort!");
+		//Start the timer
 		t.start();
-		//Testing bubblesort
+		//Testing bubble sort
+		System.out.println("Start testing...once finished, print out sorted array:");
 		Bubblesort.bubbleSort(bubtest);
+		//End the timer
 		t.stop();
-		System.out.println("Testing bubblesort and printing out sorted array: ");
 		for (int element: bubtest){
 			System.out.print(element);
 			System.out.print(" ");
@@ -67,30 +58,27 @@ public class Testing {
 		
 		//-----------------------------------------------------------------------//
 		
-		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
-		int[] mertest = {6,17,44,66,2,1,90,400,5};
 		System.out.println("Printing out the test array:");
-		for (int element: mertest){
+		for (int element: mergetest){
 			System.out.print(element);
 			System.out.print(" ");
 		}
 		System.out.println();
 		
+		System.out.println("Testing merge sort!");
 		t.start();
 		//Testing mergesort
-		Mergesort.mergeSort(mertest, new int[mertest.length], 0, mertest.length-1);
+		Mergesort.mergeSort(mergetest, new int[mergetest.length], 0, mergetest.length-1);
 		t.stop();
-		System.out.println("Testing mergesort and printing out sorted array: ");
-		for (int element: mertest){
+		System.out.println("Printing out sorted array: ");
+		for (int element: mergetest){
 			System.out.print(element);
 			System.out.print(" ");
 		}
 		System.out.println("\nTime to sort the array with mergesort took " + t.getTime() + " ms");
 		
 		//-----------------------------------------------------------------------//
-		
-		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
-		int[] countest = {6,17,44,66,2,1,90,400,5};
+	
 		System.out.println("Printing out the test array:");
 		for (int element: countest){
 			System.out.print(element);
@@ -98,11 +86,12 @@ public class Testing {
 		}
 		System.out.println();
 		
+		System.out.println("Testing counting sort!");
 		t.start();
 		//Testing countingsort
 		Countingsort.countingSort(countest);
 		t.stop();
-		System.out.println("Testing counting sort and printing out sorted array: ");
+		System.out.println("Printing out sorted array: ");
 		for (int element: countest){
 			System.out.print(element);
 			System.out.print(" ");
@@ -111,8 +100,6 @@ public class Testing {
 		
 		//-----------------------------------------------------------------------//
 		
-		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
-		int[] heaptest = {6,17,44,66,2,1,90,400,5};
 		System.out.println("Printing out the test array:");
 		for (int element: heaptest){
 			System.out.print(element);
@@ -120,12 +107,13 @@ public class Testing {
 		}
 		System.out.println();
 
+		System.out.println("Testing heapsort!");
 		t.start();
 		//Testing heapsort
 		Heapsort.heapsort(heaptest);
 		t.stop();
 		
-		System.out.println("Testing heapsort and printing out sorted array: ");
+		System.out.println("Printing out sorted array: ");
 		for (int element: heaptest){
 			System.out.print(element);
 			System.out.print(" ");
