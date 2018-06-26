@@ -1,14 +1,30 @@
-
+/*
+ * Class for all five sorting algorithms:
+ * Quicksort, 
+ */
 public class Algorithms {
 
-	public static void quickSort(int[] table, int first, int last) {
-		
-		if(first < last) {
+	/**
+	 * Method for using quicksort algorithm to sort an array to an increasing order. Takes an array
+	 * as a parameter and then sorts the array and returns
+	 * a new array element that has the original array's elements in a sorted order.
+	 * @param table Table consisting of int elements which need to be sorted.
+	 * @param first First element in the array (table). 
+	 * @param last Last element in the array (table);
+	 * @return Sorted array.
+	 */
+	public static int[] quickSort (int[] table, int first, int last) {
+		int[] result = new int[table.length];
+		if (first < last) {
 			int pivot = partition(table, first, last);
 			quickSort(table, first, last-1);
 			quickSort(table, first+1, last);
 		}
-		
+		for (int i = result.length - 1; i >= 0; i--) {
+			result[[table[i]] - 1] = table[i];
+			result[table[i]]--;
+		}
+		return result;
 	}
 	
 	public static int partition(int[] table, int first, int last) {
