@@ -6,7 +6,7 @@ public class Heapsort {
 	
 	/**
 	 * Method for using heapsort algorithm to arrange elements in an array to increasing order.
-	 * Takes an input array as a parameter and returns a sorted version of it.
+	 * Takes an input array as a parameter and sorts it.
 	 * @param inputArr
 	 */
     public static void heapsort (int inputArr[]) {

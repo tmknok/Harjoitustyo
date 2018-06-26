@@ -6,7 +6,7 @@ public class Quicksort {
 	
 	/**
 	 * Method for using quicksort algorithm to arrange elements in an array to increasing order.
-	 * Takes an input array as a parameter and returns a sorted version of it.
+	 * Takes an input array as a parameter and sorts it.
 	 * @param inputArr Table consisting of int elements which need to be sorted.
 	 * @param first Lower bound index value. This index has the first element of the array that is sorted next.
 	 * @param last Higher bound index value. This index has the last element of the array that is sorted next.

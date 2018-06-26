@@ -6,7 +6,7 @@ public class Countingsort {
 
 	/**
 	 * Method for using counting sort to arrange an array of int elements to increasing order.
-	 * Takes an input array as a parameter and returns a sorted version of it.
+	 * Takes an input array as a parameter and sorts it.
 	 * @param inputArr Array of int elements which will be sorted.
 	 */
 	public static void countingSort (int[] inputArr) {

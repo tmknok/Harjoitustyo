@@ -6,7 +6,7 @@ public class Bubblesort {
 
 	/**
 	 * Method for using bubblesort to arrange elements in an array to increasing order.
-	 * Takes an input array as a parameter and returns a sorted version of it.
+	 * Takes an input array as a parameter and sorts it.
 	 * @param inputArr Array of int elements which will be sorted.
 	 */
 	public static void bubbleSort(int[] inputArr) {
