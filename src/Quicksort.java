@@ -14,19 +14,13 @@ public class Quicksort {
 	public static void quickSort (int[] inputArr, int first, int last) {
 		
 		//Return if the array is empty or has only one element.
-		if (inputArr == null || inputArr.length == 1) {
-			return;
+		if (inputArr == null || inputArr.length < 2) {
+			
 		//Else start sorting by calling partition() method and quickSort() recursively until array is sorted.
 		} else if (first < last) {
-			partition (inputArr, first, last);
-			quickSort (inputArr, first, last - 1);
-			quickSort (inputArr, first + 1, last);
-		}
-		int[] result = new int[inputArr.length];
-		int i = 0;
-		for (int element: inputArr) {
-			result[i] = element;
-			i++;
+			int pivot = partition (inputArr, first, last);
+			quickSort (inputArr, first, pivot - 1);
+			quickSort (inputArr, pivot + 1, last);
 		}
 	}
 	
@@ -37,7 +31,7 @@ public class Quicksort {
 	 * @param first Lower bound index value. This index has the element that starts the new partition on the left side of the array.
 	 * @param last Higher bound index value. This index has the element that ends the new partition on the left side of the array.
 	 */
-	private static void partition(int[] inputArr, int first, int last) {
+	private static int partition(int[] inputArr, int first, int last) {
 		
 		//Save the last element in the array as the pivot element and decrease the first element's index by 1.
 		int pivot = inputArr[last];
@@ -57,5 +51,7 @@ public class Quicksort {
 		int tmp = inputArr[i + 1];
 		inputArr[i + 1] = inputArr[last];
 		inputArr[last] = tmp;
+		
+		return i+1;
 	}
 }

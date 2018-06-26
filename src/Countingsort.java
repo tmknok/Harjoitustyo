@@ -49,6 +49,5 @@ public class Countingsort {
 			inputArr[index] = element;
 			index++;
 		}
-		return;
 	}
 }
