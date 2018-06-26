@@ -14,7 +14,7 @@ public class Testing {
 	public static void main (String[] args) {
 		
 		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
-		randomize(10);
+		randomize(100);
 		
 		Timer t = new Timer();
 		
