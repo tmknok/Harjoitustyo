@@ -76,6 +76,59 @@ public class Algorithms {
 		
 		return result;
 	}
+	
+	public static void mergeSort(int[] table, int[] extra, int first, int last) {
+		
+		if (first >= last) {
+			
+		} else if (first + 1 == last) {
+			if (first > last) {
+				int tmp = table[first];
+				table[first] = table[last];
+				table[last] = tmp;
+				
+			}
+		} else {
+			int half = (first+last)/2;
+			mergeSort(table, extra, first, half);
+			mergeSort(table, extra, half+1, last);
+		
+		
+		int f = first;
+		int h = half + 1;
+		int l = first;
+		
+		
+		while (l <= last) {
+			
+			if (f > half) {
+				while (h <= last) {
+					extra[l] = table[h];
+					l++;
+					h++;
+				}
+			} else if (h > l) {
+				while (f <= half) {
+					extra[l] = table[f];
+					l++;
+					f++;
+				}
+			} else {
+				if (table[f] > table[h]) {
+					extra[l] = table[f];
+					f++;
+				} else {
+					extra[l] = table[h];
+					h++;
+				}
+				l++;
+			}
+		}
+		}
+		
+		
+		
+	}
 }
 
 
