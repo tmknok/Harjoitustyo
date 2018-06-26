@@ -49,23 +49,23 @@ public class Testing {
 		
 		//-----------------------------------------------------------------------//
 		
-		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
-		int[] mertest = {6,17,44,66,2,1,90,400,5};
-		System.out.println("Printing out the test array:");
-		for (int element: mertest){
-			System.out.print(element);
-			System.out.print(" ");
-		}
-		System.out.println();
-		
-		//Testing mergesort
-		Mergesort.mergeSort(mertest, null, 0, mertest.length - 1);
-		System.out.println("Testing mergesort and printing out sorted array: ");
-		for (int element: mertest){
-			System.out.print(element);
-			System.out.print(" ");
-		}
-		System.out.println();
+//		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
+//		int[] mertest = {6,17,44,66,2,1,90,400,5};
+//		System.out.println("Printing out the test array:");
+//		for (int element: mertest){
+//			System.out.print(element);
+//			System.out.print(" ");
+//		}
+//		System.out.println();
+//		
+//		//Testing mergesort
+//		Mergesort.mergeSort(mertest, null, 0, mertest.length - 1);
+//		System.out.println("Testing mergesort and printing out sorted array: ");
+//		for (int element: mertest){
+//			System.out.print(element);
+//			System.out.print(" ");
+//		}
+//		System.out.println();
 		
 		//-----------------------------------------------------------------------//
 		

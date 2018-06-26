@@ -8,70 +8,58 @@ public class Heapsort {
 	 * Method for using heapsort algorithm to arrange elements in an array to increasing order.
 	 * Takes an input array as a parameter and returns a sorted version of it.
 	 * @param inputArr
-	 * @return
 	 */
-    public static int[] heapsort (int inputArr[]) {
+    public static void heapsort (int inputArr[]) {
         int length = inputArr.length;
  
-        // Build heap (rearrange array)
-        for (int i = length/2 - 1; i >= 0; i--)
+        //First the algorithm will build the heap, the arrays is rearranged to implement this.
+        //The heapify -method is called to make sure the heap is a maximum heap.
+        for (int i = length / 2 - 1; i >= 0; i--) {
             heapify(inputArr, length, i);
+        }
  
-        // One by one extract an element from heap
-        for (int i=length-1; i>=0; i--)
-        {
-            // Move current root to end
-            int temp = inputArr[0];
+        //Then take each element one by one and remove them from the heap.
+        //The removed element will take the first place in the array.
+        //Call heapify -method after each removal to make sure the heap is still a maximum heap.
+        for (int i = length - 1; i >= 0; i--) {
+            int tmp = inputArr[0];
             inputArr[0] = inputArr[i];
-            inputArr[i] = temp;
- 
-            // call max heapify on the reduced heap
+            inputArr[i] = tmp;
             heapify(inputArr, i, 0);
         }
-        
-    	//Save the sorted array to a new array and return it.
-    	int[] result = new int[inputArr.length];
-    	int i = 0;
-    	for (int element: inputArr) {
-    		result[i] = element;
-    		i++;
-    	}
-    	return result;
     }
  
-    // To heapify a subtree rooted with node i which is
-    // an index in arr[]. n is size of heap
-    private static void heapify(int arr[], int n, int i) {
+    /**
+     * Method to heapify a subtree.
+     * @param inputArr The subtree as an array.
+     * @param heapSize The size of the heap.
+     * @param node The subtree's current root node.
+     */
+    private static void heapify (int inputArr[], int heapSize, int node) {
     	
-        int largest = i;  // Initialize largest as root
-        int l = 2*i + 1;  // left = 2*i + 1
-        int r = 2*i + 2;  // right = 2*i + 2
+        int max = node;  				//The maximum value is now the root of the tree
+        int leftChild = 2 * node + 1;  	//Left child of the root node = 2 * i + 1
+        int rightChild = 2 * node + 2;  	//Right child of the root node = 2 * i + 2
  
-        // If left child is larger than root
-        if (l < n && arr[l] > arr[largest])
-            largest = l;
- 
-        // If right child is larger than largest so far
-        if (r < n && arr[r] > arr[largest])
-            largest = r;
- 
-        // If largest is not root
-        if (largest != i)
-        {
-            int swap = arr[i];
-            arr[i] = arr[largest];
-            arr[largest] = swap;
- 
-            // Recursively heapify the affected sub-tree
-            heapify(arr, n, largest);
+        //Check if left child has a greater value than the root node.
+        //If so, left child becomes the maximum.
+        if (leftChild < heapSize && inputArr[leftChild] > inputArr[max]) {
+        	max = leftChild;
         }
-    }
  
-    /* A utility function to print array of size n */
-    private static void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i]+" ");
-        System.out.println();
+        //Check if right child has a greater value than the current maximum node.
+        //If so, right child becomes the maximum.
+        if (rightChild < heapSize && inputArr[rightChild] > inputArr[max]) {
+        	max = rightChild;
+        }
+ 
+        //If root is not the greatest, the heap is not a maximum heap and it needs to be fixed:
+        //Heapify will call itself recursively for all its subtrees until the whole tree is a maximum heap.
+        if (max != node) {
+        	int swap = inputArr[node];
+            inputArr[node] = inputArr[max];
+            inputArr[max] = swap;
+            heapify(inputArr, heapSize, max);
+        }
     }
 }
