@@ -14,9 +14,8 @@ public class Bubblesort {
 		
 		int length = inputArr.length;
 		
-		for (int pass = 0; pass < length; pass++) {
-			//
-			for (int i = 0; i < length; i++) {
+		for (int pass = 1; pass < length; pass++) {
+			for (int i = 0; i < length-pass; i++) {
 				if (inputArr[i] > inputArr[i + 1]) {
 					int tmp = inputArr[i];
 					inputArr[i] = inputArr[i + 1];						
