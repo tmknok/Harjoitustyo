@@ -24,14 +24,24 @@ public class Testing {
 //		}
 //		System.out.println();
 		
-		//Testing quicksort
+		Timer t = new Timer();
+		
+		
 		System.out.println("Testing quicksort and printing out the sorted array:");
 		Quicksort.quickSort(quicktest, 0, quicktest.length - 1);
+
+		//Start the timer
+		t.start();
+		//Testing quicksort
+		Quicksort.quickSort(testarray, 0, testarray.length - 1);
+		//End the timer
+		t.stop();
+
 		for(int element: testarray) {
 			System.out.print(element);
 			System.out.print(" ");
 		}
-		System.out.println();		
+		System.out.println("\nTime to sort the array with quicksort took " + t.getTime() + " ms");
 		
 		//-----------------------------------------------------------------------//
 		
@@ -44,14 +54,16 @@ public class Testing {
 		}
 		System.out.println();
 		
+		t.start();
 		//Testing bubblesort
 		Bubblesort.bubbleSort(bubtest);
+		t.stop();
 		System.out.println("Testing bubblesort and printing out sorted array: ");
 		for (int element: bubtest){
 			System.out.print(element);
 			System.out.print(" ");
 		}
-		System.out.println();
+		System.out.println("\nTime to sort the array with bubblesort took " + t.getTime() + " ms");
 		
 		//-----------------------------------------------------------------------//
 		
@@ -64,14 +76,16 @@ public class Testing {
 		}
 		System.out.println();
 		
+		t.start();
 		//Testing mergesort
 		Mergesort.mergeSort(mertest, new int[mertest.length], 0, mertest.length-1);
+		t.stop();
 		System.out.println("Testing mergesort and printing out sorted array: ");
 		for (int element: mertest){
 			System.out.print(element);
 			System.out.print(" ");
 		}
-		System.out.println();
+		System.out.println("\nTime to sort the array with mergesort took " + t.getTime() + " ms");
 		
 		//-----------------------------------------------------------------------//
 		
@@ -84,14 +98,16 @@ public class Testing {
 		}
 		System.out.println();
 		
+		t.start();
 		//Testing countingsort
 		Countingsort.countingSort(countest);
+		t.stop();
 		System.out.println("Testing counting sort and printing out sorted array: ");
 		for (int element: countest){
 			System.out.print(element);
 			System.out.print(" ");
 		}
-		System.out.println();
+		System.out.println("\nTime to sort the array with counting sort took " + t.getTime() + " ms");
 		
 		//-----------------------------------------------------------------------//
 		
@@ -104,14 +120,17 @@ public class Testing {
 		}
 		System.out.println();
 
+		t.start();
 		//Testing heapsort
 		Heapsort.heapsort(heaptest);
+		t.stop();
+		
 		System.out.println("Testing heapsort and printing out sorted array: ");
 		for (int element: heaptest){
 			System.out.print(element);
 			System.out.print(" ");
 		}
-		System.out.println();
+		System.out.println("\nTime to sort the array with heapsort took " + t.getTime() + " ms");
 	}
 	
 	/**
