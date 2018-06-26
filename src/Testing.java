@@ -11,6 +11,7 @@ public class Testing {
 		
 		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
 		int[] testarray = {6,17,44,66,2,1,90,400,5};
+		System.out.println("Printing out the test array:");
 		for (int element: testarray){
 			System.out.print(element);
 			System.out.print(" ");
@@ -18,45 +19,89 @@ public class Testing {
 		System.out.println();
 		
 		//Testing quicksort
-		int[] result = Quicksort.quickSort(testarray, 0, testarray.length - 1);
-		System.out.println("Testing quicksort and printing out sorted array: ");
-		for (int element: result){
+		System.out.println("Testing quicksort and printing out the sorted array:");
+		Quicksort.quickSort(testarray, 0, testarray.length - 1);
+		for(int element: testarray) {
+			System.out.print(element);
+			System.out.print(" ");
+		}
+		System.out.println();		
+		
+		//-----------------------------------------------------------------------//
+		
+		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
+		int[] bubtest = {6,17,44,66,2,1,90,400,5};
+		System.out.println("Printing out the test array:");
+		for (int element: bubtest){
 			System.out.print(element);
 			System.out.print(" ");
 		}
 		System.out.println();
 		
 		//Testing bubblesort
-		result = Quicksort.quickSort(testarray, 0, testarray.length - 1);
-		System.out.println("Testing quicksort and printing out sorted array: ");
-		for (int element: result){
+		Bubblesort.bubbleSort(bubtest);
+		System.out.println("Testing bubblesort and printing out sorted array: ");
+		for (int element: bubtest){
+			System.out.print(element);
+			System.out.print(" ");
+		}
+		System.out.println();
+		
+		//-----------------------------------------------------------------------//
+		
+		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
+		int[] mertest = {6,17,44,66,2,1,90,400,5};
+		System.out.println("Printing out the test array:");
+		for (int element: mertest){
 			System.out.print(element);
 			System.out.print(" ");
 		}
 		System.out.println();
 		
 		//Testing mergesort
-		result = Quicksort.quickSort(testarray, 0, testarray.length - 1);
-		System.out.println("Testing quicksort and printing out sorted array: ");
-		for (int element: result){
+		Mergesort.mergeSort(mertest, null, 0, mertest.length - 1);
+		System.out.println("Testing mergesort and printing out sorted array: ");
+		for (int element: mertest){
+			System.out.print(element);
+			System.out.print(" ");
+		}
+		System.out.println();
+		
+		//-----------------------------------------------------------------------//
+		
+		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
+		int[] countest = {6,17,44,66,2,1,90,400,5};
+		System.out.println("Printing out the test array:");
+		for (int element: countest){
 			System.out.print(element);
 			System.out.print(" ");
 		}
 		System.out.println();
 		
 		//Testing countingsort
-		result = Countingsort.countingSort(testarray);
+		Countingsort.countingSort(countest);
 		System.out.println("Testing counting sort and printing out sorted array: ");
-		for (int element: result){
+		for (int element: countest){
 			System.out.print(element);
 			System.out.print(" ");
 		}
 		System.out.println();
 		
+		//-----------------------------------------------------------------------//
+		
+		//Initializing an array of int elements for testing and printing it out before trying the sorting algorithms. 
+		int[] heaptest = {6,17,44,66,2,1,90,400,5};
+		System.out.println("Printing out the test array:");
+		for (int element: heaptest){
+			System.out.print(element);
+			System.out.print(" ");
+		}
+		System.out.println();
+
 		//Testing heapsort
-		result = Heapsort.heapsort(testarray);
+		Heapsort.heapsort(heaptest);
 		System.out.println("Testing heapsort and printing out sorted array: ");
-		for (int element: result){
+		for (int element: heaptest){
 			System.out.print(element);
 			System.out.print(" ");
 		}

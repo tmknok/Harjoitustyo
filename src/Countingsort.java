@@ -8,9 +8,8 @@ public class Countingsort {
 	 * Method for using counting sort to arrange an array of int elements to increasing order.
 	 * Takes an input array as a parameter and returns a sorted version of it.
 	 * @param inputArr Array of int elements which will be sorted.
-	 * @return Array of int elements that has the original array's elements in an increasing order.
 	 */
-	public static int[] countingSort (int[] inputArr) {
+	public static void countingSort (int[] inputArr) {
 		
 		int max = 0;
 		
@@ -36,6 +35,6 @@ public class Countingsort {
 			result[b[inputArr[i]]-1] = inputArr[i];
 		}
 		
-		return result;
+		return;
 	}
 }

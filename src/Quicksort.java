@@ -10,13 +10,12 @@ public class Quicksort {
 	 * @param inputArr Table consisting of int elements which need to be sorted.
 	 * @param first Lower bound index value. This index has the first element of the array that is sorted next.
 	 * @param last Higher bound index value. This index has the last element of the array that is sorted next.
-	 * @return A new array of int elements with the original elements arranged in increasing order.
 	 */
-	public static int[] quickSort (int[] inputArr, int first, int last) {
+	public static void quickSort (int[] inputArr, int first, int last) {
 		
 		//Return if the array is empty or has only one element.
-		if (inputArr == null || inputArr.length == 0) {
-			return inputArr;
+		if (inputArr == null || inputArr.length == 1) {
+			return;
 		//Else start sorting by calling partition() method and quickSort() recursively until array is sorted.
 		} else if (first < last) {
 			partition (inputArr, first, last);
@@ -29,7 +28,6 @@ public class Quicksort {
 			result[i] = element;
 			i++;
 		}
-		return result;
 	}
 	
 	/**
@@ -47,7 +45,7 @@ public class Quicksort {
 		
 		//In each iteration increase the value of j
 		for (int j = first; j < last; j++) {
-			//Check if the element in index j is less than or equal to pivot element.
+			//Check if the element in index j is less than or equal than pivot element.
 			//If so, increase i by 1 and change the position of the elements in indexes j and i.
 			if (inputArr[j] <= pivot) {
 				i++;
